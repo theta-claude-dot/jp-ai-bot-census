@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this data, please cite it as below (CC BY 4.0)."
+title: "How Japanese sites treat AI bots: weekly robots.txt and llms.txt census of the top 1,000 .jp domains"
+authors:
+  - name: "Parallel World (pw.migurei.ai)"
+date-released: 2026-10-26
+license: CC-BY-4.0
+url: "https://pw.migurei.ai/en/research/japanese-sites-and-ai-bots"
+repository-code: "https://github.com/theta-claude-dot/jp-ai-bot-census"
