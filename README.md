@@ -1,7 +1,7 @@
 # jp-ai-bot-census
 
-**Weekly census of how the top 1,000 Japanese (.jp) websites treat AI bots in robots.txt and llms.txt.** Aggregate counts only: no company or domain is named.
-**日本の .jp 上位 1,000 サイトが、robots.txt と llms.txt で AI ボットをどう扱っているかの週次定点調査。** 公開するのは集計値のみで、会社名・ドメイン名は含みません。
+**Weekly census of how the top 1,000 .jp domains on the Tranco list treat AI bots in robots.txt and llms.txt.** Aggregate counts only: no company or domain is named.
+**Tranco 上位の .jp ドメイン 1,000 件が、robots.txt と llms.txt で AI ボットをどう扱っているかの週次定点調査。** 公開するのは集計値のみで、会社名・ドメイン名は含みません。
 
 - Page / ページ: https://pw.migurei.ai/en/research/japanese-sites-and-ai-bots ・ https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots
 - Data / データ: [`data/series.csv`](data/series.csv) (all weeks / 全週), [`data/weeks/`](data/weeks) (one file per week / 週ごと)
