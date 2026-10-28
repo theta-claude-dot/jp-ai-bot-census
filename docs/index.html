@@ -98,6 +98,28 @@ small,.note{color:#555}
 <h3>ほかの調査では 1% や 32% とあるのはなぜ？</h3>
 <p>調査ごとに、対象・分母・指標（どのボットを、どこまで拒否）が違うためです。日本の稼働サイトでは AI クローラーを 1 つ以上拒否しているのは 1.0%（Piperic、2026-07-13、分母 363,583）、編集部が選んだ日本の主要サイトでは GPTBot の全面ブロックが 32.3%（AB通信、2026-10-16、分母 99）、この調査では GPTBot が 10.3%（Parallel World、2026-10-26、分母 719）です。日本で利用の多いサイトを数えた Zyte の調査も GPTBot 10.3%（2026-06-22 公開、分母 1,111）ですが、別の調査で、同じデータではありません。対象・分母・指標を並べた表：<a href="surveys.html">日本のサイトの AI クローラー拒否率は 1%？ 10%？ 32%？ 調査によって違う理由</a></p>
 
+<h2 id="sector">組織の種類別（2026-W44）：大学・官公庁・企業で、AI ボットを拒否する割合は違う？</h2>
+<p>2026-W44 の調査では、.ac.jp（大学など）37 サイトと .go.jp・.lg.jp（官公庁・自治体）51 サイトで、GPTBot を「/」で拒否するサイトは 0 件でした。.co.jp（企業）は 232 サイト中 27 件（11.6%）、全体では 719 サイト中 74 件（10.3%）です。サイト数は robots.txt を判定できたサイトです。出典：<a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages-sector">毎週の調査ページ（Parallel World / migurei）</a></p>
+<div class="wrap"><table>
+<caption>ドメインの種類別：GPTBot と学習用 AI ボットの拒否（2026-W44、Tranco 上位 .jp 1,000 件）</caption>
+<thead><tr><th scope="col">種類</th><th scope="col">サイト数</th><th scope="col">robots.txt を判定できたサイト</th><th scope="col">GPTBot を拒否</th><th scope="col">学習用 AI ボットを 1 つ以上拒否</th></tr></thead>
+<tbody>
+<tr><th scope="row">.co.jp</th><td>277</td><td>232</td><td>27（11.6%）</td><td>36（15.5%）</td></tr>
+<tr><th scope="row">.ac.jp</th><td>38</td><td>37</td><td>0（95% 上限 9.5%）</td><td>0（95% 上限 9.5%）</td></tr>
+<tr><th scope="row">.go.jp・.lg.jp</th><td>74</td><td>51</td><td>0（95% 上限 7.0%）</td><td>&lt;5</td></tr>
+<tr><th scope="row">その他の .jp（.or.jp・.ne.jp ほか）</th><td>611</td><td>399</td><td>47（11.8%）</td><td>74（18.5%）</td></tr>
+<tr><th scope="row">合計</th><td>1,000</td><td>719</td><td>74（10.3%）</td><td>111（15.4%）</td></tr>
+</tbody></table></div>
+<ul class="note">
+<li>割合の分母は robots.txt から可否を判定できたサイトです。robots.txt がない（404 など）サイトは RFC 9309 に従い「すべて許可」として数えています。</li>
+<li>.ac.jp と .go.jp・.lg.jp の 0 件には robots.txt がないサイトが含まれます（.ac.jp 37 サイト中 13、.go.jp・.lg.jp 51 サイト中 18）。中身のある robots.txt を返したサイトに限っても、GPTBot を拒否しているのは .ac.jp 22 サイト中 0、.go.jp・.lg.jp 29 サイト中 0 でした。</li>
+<li>.go.jp・.lg.jp は 74 サイト中 23 サイトを判定できませんでした（ドメイン名が解決できない 16、403 が 5、そのほか 2）。403 は WAF などがリクエストを止めている可能性があり、「0 件」は AI ボットを受け入れているという意味ではありません。</li>
+<li>.ac.jp と .go.jp・.lg.jp を合わせると 88 サイト中 0 件（95% 上限 4.1%）です。「95% 上限」は 0 件のときの 95% 信頼区間（Clopper–Pearson）の上限です。</li>
+<li>ドメインの種類は業種と同じではありません。.jp など別のドメインを使う大学・自治体・企業も多くあります。</li>
+<li>この分け方は計測の後に決めたもので、探索的な集計です。計測は 2026年10月26日の 1 回、対象は Tranco 上位の .jp 1,000 件、判定はトップページ（/）の robots.txt だけです。1〜4 件のセルは「&lt;5」と表示しています。</li>
+<li>「学習用 AI ボット」は GPTBot・ClaudeBot・anthropic-ai・Google-Extended・Applebot-Extended・CCBot・meta-externalagent・Amazonbot・Bytespider の 9 種です（<a href="https://github.com/theta-claude-dot/ai-bot-registry">AI ボット登録簿</a> bots-2026-10-25）。「GPTBot を拒否」は、GPTBot に当てはまるグループ（GPTBot のグループ、なければ <code>*</code>）が「/」を許可していないサイトです。</li>
+</ul>
+
 <h2 id="weekly">週ごとの推移</h2>
 <p>同じ 1,000 件のリストを固定して毎週計測します。週ごとの差は、サイト側の設定の変化（または到達できたかどうかの変化）を表します。最新の週が一番上です。データ：<a href="https://github.com/theta-claude-dot/jp-ai-bot-census/blob/main/data/series.csv">data/series.csv</a></p>
 <div class="wrap"><table>
