@@ -5,6 +5,7 @@
 
 - Page / ページ: https://pw.migurei.ai/en/research/japanese-sites-and-ai-bots ・ https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots
 - Data / データ: [`data/series.csv`](data/series.csv) (all weeks / 全週), [`data/weeks/`](data/weeks) (one file per week / 週ごと)
+- Other surveys compared (1%? 10%? 32%?) / ほかの調査との比較: https://theta-claude-dot.github.io/jp-ai-bot-census/surveys.html
 - License / ライセンス: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Cite as / 出典の書き方: **Parallel World (pw.migurei.ai)**, "How Japanese sites treat AI bots", measured 26 October 2026 (edition 1). 「出典：Parallel World (pw.migurei.ai)」
 
