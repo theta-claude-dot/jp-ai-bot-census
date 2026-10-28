@@ -9,6 +9,26 @@
 - License / ライセンス: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Cite as / 出典の書き方: **Parallel World (pw.migurei.ai)**, "How Japanese sites treat AI bots", measured 26 October 2026 (edition 1). 「出典：Parallel World (pw.migurei.ai)」
 
+## 組織の種類別（2026-W44）：大学・官公庁・企業で、AI ボットを拒否する割合は違う？
+
+2026-W44 の調査では、.ac.jp（大学など）37 サイトと .go.jp・.lg.jp（官公庁・自治体）51 サイトで、GPTBot を「/」で拒否するサイトは 0 件でした。.co.jp（企業）は 232 サイト中 27 件（11.6%）、全体では 719 サイト中 74 件（10.3%）です。サイト数は robots.txt を判定できたサイトです。出典：[毎週の調査ページ（Parallel World / migurei）](https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages-sector)
+
+| 種類 | サイト数 | robots.txt を判定できたサイト | GPTBot を拒否 | 学習用 AI ボットを 1 つ以上拒否 |
+|---|---:|---:|---|---|
+| .co.jp | 277 | 232 | 27（11.6%） | 36（15.5%） |
+| .ac.jp | 38 | 37 | 0（95% 上限 9.5%） | 0（95% 上限 9.5%） |
+| .go.jp・.lg.jp | 74 | 51 | 0（95% 上限 7.0%） | <5 |
+| その他の .jp（.or.jp・.ne.jp ほか） | 611 | 399 | 47（11.8%） | 74（18.5%） |
+| 合計 | 1,000 | 719 | 74（10.3%） | 111（15.4%） |
+
+- 割合の分母は robots.txt から可否を判定できたサイトです。robots.txt がない（404 など）サイトは RFC 9309 に従い「すべて許可」として数えています。
+- .ac.jp と .go.jp・.lg.jp の 0 件には robots.txt がないサイトが含まれます（.ac.jp 37 サイト中 13、.go.jp・.lg.jp 51 サイト中 18）。中身のある robots.txt を返したサイトに限っても、GPTBot を拒否しているのは .ac.jp 22 サイト中 0、.go.jp・.lg.jp 29 サイト中 0 でした。
+- .go.jp・.lg.jp は 74 サイト中 23 サイトを判定できませんでした（ドメイン名が解決できない 16、403 が 5、そのほか 2）。403 は WAF などがリクエストを止めている可能性があり、「0 件」は AI ボットを受け入れているという意味ではありません。
+- .ac.jp と .go.jp・.lg.jp を合わせると 88 サイト中 0 件（95% 上限 4.1%）です。「95% 上限」は 0 件のときの 95% 信頼区間（Clopper–Pearson）の上限です。
+- ドメインの種類は業種と同じではありません。.jp など別のドメインを使う大学・自治体・企業も多くあります。
+- この分け方は計測の後に決めたもので、探索的な集計です。計測は 2026年10月26日の 1 回、対象は Tranco 上位の .jp 1,000 件、判定はトップページ（/）の robots.txt だけです。1〜4 件のセルは `<5` と表示しています。
+- 「学習用 AI ボット」は GPTBot・ClaudeBot・anthropic-ai・Google-Extended・Applebot-Extended・CCBot・meta-externalagent・Amazonbot・Bytespider の 9 種です（[AI ボット登録簿](https://github.com/theta-claude-dot/ai-bot-registry) bots-2026-10-25）。「GPTBot を拒否」は、GPTBot に当てはまるグループ（GPTBot のグループ、なければ `*`）が「/」を許可していないサイトです。
+
 ## English
 
 ### What it is
