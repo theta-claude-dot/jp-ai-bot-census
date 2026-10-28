@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本のサイトの AI ボット対応 週次定点調査｜.jp 上位 1,000 サイトの robots.txt・llms.txt（2026-W44）</title>
+<meta name="description" content="Tranco 上位の .jp ドメイン 1,000 件が robots.txt と llms.txt で GPTBot・OAI-SearchBot・ClaudeBot など AI ボット 39 種をどう扱っているかの週次集計。2026-W44：判定できた 719 サイト中 74（10.3%）が GPTBot を拒否。CC BY 4.0。">
+<link rel="canonical" href="https://theta-claude-dot.github.io/jp-ai-bot-census/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "日本の .jp 上位 1,000 サイトの AI ボット対応（robots.txt・llms.txt）週次定点調査",
+ "alternateName": "jp-ai-bot-census",
+ "description": "Tranco 上位の .jp 登録ドメイン 1,000 件について、robots.txt が AI ボット 39 種それぞれにトップページ（/）を許可しているか、llms.txt を置いているかを毎週数えた集計値。会社名・ドメイン名は含まない。",
+ "url": "https://theta-claude-dot.github.io/jp-ai-bot-census/",
+ "sameAs": [
+  "https://github.com/theta-claude-dot/jp-ai-bot-census",
+  "https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots"
+ ],
+ "inLanguage": [
+  "ja",
+  "en"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "isAccessibleForFree": true,
+ "creator": {
+  "@type": "Organization",
+  "name": "Parallel World",
+  "url": "https://pw.migurei.ai/"
+ },
+ "temporalCoverage": "2026-10-26/..",
+ "spatialCoverage": {
+  "@type": "Place",
+  "name": "Japan"
+ },
+ "keywords": [
+  "robots.txt",
+  "llms.txt",
+  "GPTBot",
+  "OAI-SearchBot",
+  "ClaudeBot",
+  "AI クローラー",
+  "LLMO",
+  "日本"
+ ],
+ "variableMeasured": [
+  "robots.txt で各 AI ボットに / を許可していないサイトの数と割合",
+  "llms.txt を置いているサイトの数と割合"
+ ],
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "text/csv",
+   "contentUrl": "https://raw.githubusercontent.com/theta-claude-dot/jp-ai-bot-census/main/data/series.csv"
+  }
+ ]
+}
+</script>
+<style>
+body{font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;max-width:60rem;margin:0 auto;padding:1rem;line-height:1.7;color:#222}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.92rem}
+th,td{border:1px solid #ccc;padding:.3rem .5rem;text-align:left;vertical-align:top}
+thead th{background:#f3f3f3}
+td{white-space:nowrap}
+.wrap{overflow-x:auto}
+h1{font-size:1.5rem;line-height:1.4}
+h2{margin-top:2.2rem;border-bottom:1px solid #ddd}
+small,.note{color:#555}
+</style>
+</head>
+<body>
+<header>
+<h1>日本のサイトは AI ボットをどう扱っているか：.jp 上位 1,000 サイトの robots.txt・llms.txt 週次定点調査</h1>
+<p>最新：2026-W44（2026年10月26日計測）。Tranco 上位の .jp 登録ドメイン 1,000 件（固定リスト）について、robots.txt が AI ボット 39 種それぞれにトップページ（/）を許可しているか、llms.txt を置いているかを毎週数えています。公開するのは集計値だけで、会社名・ドメイン名は含みません。</p>
+<p>調べ方・グラフ・この数字から言えないことの詳しい説明：<a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages">日本のサイトは AI ボットをどう扱っているか（Parallel World）</a></p>
+</header>
+
+<main>
+<h2 id="faq">よくある質問（2026 年第 44 週）</h2>
+
+<h3>日本の企業サイトで GPTBot を拒否している割合は？</h3>
+<p>10.3%（robots.txt を判定できた 719 サイト中 74、2026-W44、Tranco 上位 .jp 1,000 件）。robots.txt が GPTBot（OpenAI の学習用クローラー）にトップページ（/）を許可していないサイトの割合です。中身のある robots.txt ファイルを返した 515 サイトに限ると 74 サイト（14.4%）です。出典：<a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages">Parallel World「日本のサイトは AI ボットをどう扱っているか」</a></p>
+
+<h3>GPTBot は拒否、OAI-SearchBot は許可しているサイトは？</h3>
+<p>35 サイト（4.9%、判定できた 719 サイト中、2026-W44）。学習用の GPTBot は拒否し、ChatGPT 検索の OAI-SearchBot は許可しています。逆（OAI-SearchBot だけを拒否し GPTBot は許可）は 0 サイトでした。両方を拒否しているのは 39 サイト、両方を許可しているのは 645 サイトです。出典：<a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages">Parallel World「日本のサイトは AI ボットをどう扱っているか」</a></p>
+<div class="wrap"><table>
+<caption>GPTBot × OAI-SearchBot（2026-W44、robots.txt を判定できた 719 サイト）</caption>
+<thead><tr><th scope="col"></th><th scope="col">OAI-SearchBot 許可</th><th scope="col">OAI-SearchBot 拒否</th></tr></thead>
+<tbody>
+<tr><th scope="row">GPTBot 許可</th><td>645</td><td>0</td></tr>
+<tr><th scope="row">GPTBot 拒否</th><td>35</td><td>39</td></tr>
+</tbody></table></div>
+
+<h3>robots.txt を取得できなかったサイトは？</h3>
+<p>自ドメインから応答した 788 サイトのうち 61 サイト（7.7%、2026-W44）が、当社の署名付きリクエスト（日本の IP から送信）に robots.txt の中身ではなく 403（アクセス拒否）を返しました。このほか 1,000 件中、ドメイン名が解決できない 91、タイムアウト 41、そのほかの通信エラー 48、リダイレクトが多すぎる 7 サイトは応答がありませんでした。403 を返したサイトはボット別の可否が判定できないため、上の割合の分母（719）には入っていません。出典：<a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages">Parallel World「日本のサイトは AI ボットをどう扱っているか」</a></p>
+
+<h2 id="weekly">週ごとの推移</h2>
+<p>同じ 1,000 件のリストを固定して毎週計測します。週ごとの差は、サイト側の設定の変化（または到達できたかどうかの変化）を表します。最新の週が一番上です。データ：<a href="https://github.com/theta-claude-dot/jp-ai-bot-census/blob/main/data/series.csv">data/series.csv</a></p>
+<div class="wrap"><table>
+<thead><tr><th scope="col">週</th><th scope="col">計測日</th><th scope="col">GPTBot を許可していない</th><th scope="col">OAI-SearchBot を許可していない</th><th scope="col">ClaudeBot を許可していない</th><th scope="col">Google-Extended を許可していない</th><th scope="col">学習用ボットを 1 つ以上許可していない</th><th scope="col">robots.txt で 403</th><th scope="col">llms.txt あり</th></tr></thead>
+<tbody>
+<tr><th scope="row">2026-W44</th><td>2026年10月26日</td><td>74 / 719（10.3%）</td><td>39 / 719（5.4%）</td><td>73 / 719（10.2%）</td><td>63 / 719（8.8%）</td><td>111 / 719（15.4%）</td><td>61 / 788（7.7%）</td><td>29 / 1,000（2.9%）</td></tr>
+</tbody></table></div>
+<p class="note">ボット別の割合の分母は robots.txt から可否を判定できたサイト、403 の分母は自ドメインから応答したサイト、llms.txt の分母は対象の 1,000 件です。</p>
+
+<h2 id="all">2026-W44 の全集計値</h2>
+<div class="wrap"><table>
+<thead><tr><th scope="col">項目</th><th scope="col">サイト数 / 分母（割合）</th></tr></thead>
+<tbody>
+<tr><th scope="row">対象サイト</th><td>1,000 / 1,000（100.0%）</td></tr>
+<tr><th scope="row">ドメイン名が解決できた（apex か www）</th><td>909 / 1,000（90.9%）</td></tr>
+<tr><th scope="row">robots.txt に応答した（ステータスを問わない）</th><td>813 / 1,000（81.3%）</td></tr>
+<tr><th scope="row">robots.txt に自ドメインから応答した</th><td>788 / 1,000（78.8%）</td></tr>
+<tr><th scope="row">robots.txt からボット別の可否を判定できた</th><td>719 / 1,000（71.9%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：正常に取得</th><td>566 / 1,000（56.6%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：404 など（すべて許可とみなす）</th><td>153 / 1,000（15.3%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：403</th><td>61 / 1,000（6.1%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：そのほかの拒否</th><td>&lt;5 / 1,000</td></tr>
+<tr><th scope="row">robots.txt の取得結果：5xx</th><td>8 / 1,000（0.8%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：ドメイン名が解決できない</th><td>91 / 1,000（9.1%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：タイムアウト</th><td>41 / 1,000（4.1%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：そのほかの通信エラー</th><td>48 / 1,000（4.8%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：リダイレクトが多すぎる</th><td>7 / 1,000（0.7%）</td></tr>
+<tr><th scope="row">robots.txt の取得結果：別ドメインへのリダイレクト</th><td>25 / 1,000（2.5%）</td></tr>
+<tr><th scope="row">当社の署名付きリクエスト（日本の IP）に robots.txt で 403（自ドメインから応答したサイト中）</th><td>61 / 788（7.7%）</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：AkamaiGHost（403 のサイト中）</th><td>19 / 61（31.1%）</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：AkamaiNetStorage（403 のサイト中）</th><td>&lt;5 / 61</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：AmazonS3（403 のサイト中）</th><td>13 / 61（21.3%）</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：Server ヘッダーなし（403 のサイト中）</th><td>9 / 61（14.8%）</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：Apache（403 のサイト中）</th><td>7 / 61（11.5%）</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：awselb（403 のサイト中）</th><td>5 / 61（8.2%）</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：nginx（403 のサイト中）</th><td>&lt;5 / 61</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：CloudFront（403 のサイト中）</th><td>&lt;5 / 61</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：cloudflare（403 のサイト中）</th><td>&lt;5 / 61</td></tr>
+<tr><th scope="row">robots.txt 403 の Server ヘッダー：そのほか（403 のサイト中）</th><td>&lt;5 / 61</td></tr>
+<tr><th scope="row">中身のある robots.txt ファイルを返した</th><td>515 / 1,000（51.5%）</td></tr>
+<tr><th scope="row">当社のトークン migurei-ParallelWeb に / を許可していない</th><td>7 / 719（1.0%）</td></tr>
+<tr><th scope="row">GPTBot（学習）に / を許可していない</th><td>74 / 719（10.3%）</td></tr>
+<tr><th scope="row">GPTBot（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>74 / 515（14.4%）</td></tr>
+<tr><th scope="row">OAI-SearchBot（検索インデックス）に / を許可していない</th><td>39 / 719（5.4%）</td></tr>
+<tr><th scope="row">OAI-SearchBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>39 / 515（7.6%）</td></tr>
+<tr><th scope="row">ChatGPT-User（ユーザー操作での取得）に / を許可していない</th><td>49 / 719（6.8%）</td></tr>
+<tr><th scope="row">ChatGPT-User（ユーザー操作での取得）に / を許可していない（中身のある robots.txt のみ）</th><td>49 / 515（9.5%）</td></tr>
+<tr><th scope="row">Claude-SearchBot（検索インデックス）に / を許可していない</th><td>35 / 719（4.9%）</td></tr>
+<tr><th scope="row">Claude-SearchBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>35 / 515（6.8%）</td></tr>
+<tr><th scope="row">Claude-User（ユーザー操作での取得）に / を許可していない</th><td>35 / 719（4.9%）</td></tr>
+<tr><th scope="row">Claude-User（ユーザー操作での取得）に / を許可していない（中身のある robots.txt のみ）</th><td>35 / 515（6.8%）</td></tr>
+<tr><th scope="row">ClaudeBot（学習）に / を許可していない</th><td>73 / 719（10.2%）</td></tr>
+<tr><th scope="row">ClaudeBot（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>73 / 515（14.2%）</td></tr>
+<tr><th scope="row">anthropic-ai（学習）に / を許可していない</th><td>46 / 719（6.4%）</td></tr>
+<tr><th scope="row">anthropic-ai（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>46 / 515（8.9%）</td></tr>
+<tr><th scope="row">Perplexity-User（ユーザー操作での取得）に / を許可していない</th><td>33 / 719（4.6%）</td></tr>
+<tr><th scope="row">Perplexity-User（ユーザー操作での取得）に / を許可していない（中身のある robots.txt のみ）</th><td>33 / 515（6.4%）</td></tr>
+<tr><th scope="row">PerplexityBot（検索インデックス）に / を許可していない</th><td>49 / 719（6.8%）</td></tr>
+<tr><th scope="row">PerplexityBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>49 / 515（9.5%）</td></tr>
+<tr><th scope="row">Google-Extended（学習）に / を許可していない</th><td>63 / 719（8.8%）</td></tr>
+<tr><th scope="row">Google-Extended（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>63 / 515（12.2%）</td></tr>
+<tr><th scope="row">Gemini-Deep-Research（ユーザー操作での取得）に / を許可していない</th><td>10 / 719（1.4%）</td></tr>
+<tr><th scope="row">Gemini-Deep-Research（ユーザー操作での取得）に / を許可していない（中身のある robots.txt のみ）</th><td>10 / 515（1.9%）</td></tr>
+<tr><th scope="row">Googlebot（検索インデックス）に / を許可していない</th><td>7 / 719（1.0%）</td></tr>
+<tr><th scope="row">Googlebot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>7 / 515（1.4%）</td></tr>
+<tr><th scope="row">Google-InspectionTool（検索インデックス）に / を許可していない</th><td>7 / 719（1.0%）</td></tr>
+<tr><th scope="row">Google-InspectionTool（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>7 / 515（1.4%）</td></tr>
+<tr><th scope="row">bingbot（検索インデックス）に / を許可していない</th><td>23 / 719（3.2%）</td></tr>
+<tr><th scope="row">bingbot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>23 / 515（4.5%）</td></tr>
+<tr><th scope="row">Applebot-Extended（学習）に / を許可していない</th><td>62 / 719（8.6%）</td></tr>
+<tr><th scope="row">Applebot-Extended（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>62 / 515（12.0%）</td></tr>
+<tr><th scope="row">Applebot（検索インデックス）に / を許可していない</th><td>17 / 719（2.4%）</td></tr>
+<tr><th scope="row">Applebot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>17 / 515（3.3%）</td></tr>
+<tr><th scope="row">DuckDuckBot（検索インデックス）に / を許可していない</th><td>8 / 719（1.1%）</td></tr>
+<tr><th scope="row">DuckDuckBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>8 / 515（1.6%）</td></tr>
+<tr><th scope="row">CCBot（学習）に / を許可していない</th><td>65 / 719（9.0%）</td></tr>
+<tr><th scope="row">CCBot（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>65 / 515（12.6%）</td></tr>
+<tr><th scope="row">meta-externalagent（学習）に / を許可していない</th><td>65 / 719（9.0%）</td></tr>
+<tr><th scope="row">meta-externalagent（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>65 / 515（12.6%）</td></tr>
+<tr><th scope="row">meta-externalfetcher（ユーザー操作での取得）に / を許可していない</th><td>37 / 719（5.1%）</td></tr>
+<tr><th scope="row">meta-externalfetcher（ユーザー操作での取得）に / を許可していない（中身のある robots.txt のみ）</th><td>37 / 515（7.2%）</td></tr>
+<tr><th scope="row">meta-webindexer（検索インデックス）に / を許可していない</th><td>19 / 719（2.6%）</td></tr>
+<tr><th scope="row">meta-webindexer（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>19 / 515（3.7%）</td></tr>
+<tr><th scope="row">Amazonbot（学習）に / を許可していない</th><td>61 / 719（8.5%）</td></tr>
+<tr><th scope="row">Amazonbot（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>61 / 515（11.8%）</td></tr>
+<tr><th scope="row">Bytespider（学習）に / を許可していない</th><td>65 / 719（9.0%）</td></tr>
+<tr><th scope="row">Bytespider（学習）に / を許可していない（中身のある robots.txt のみ）</th><td>65 / 515（12.6%）</td></tr>
+<tr><th scope="row">MistralAI-User（ユーザー操作での取得）に / を許可していない</th><td>13 / 719（1.8%）</td></tr>
+<tr><th scope="row">MistralAI-User（ユーザー操作での取得）に / を許可していない（中身のある robots.txt のみ）</th><td>13 / 515（2.5%）</td></tr>
+<tr><th scope="row">YouBot（検索インデックス）に / を許可していない</th><td>24 / 719（3.3%）</td></tr>
+<tr><th scope="row">YouBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>24 / 515（4.7%）</td></tr>
+<tr><th scope="row">ExaSearchBot（検索インデックス）に / を許可していない</th><td>10 / 719（1.4%）</td></tr>
+<tr><th scope="row">ExaSearchBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>10 / 515（1.9%）</td></tr>
+<tr><th scope="row">cohere-ai（用途不明）に / を許可していない</th><td>49 / 719（6.8%）</td></tr>
+<tr><th scope="row">cohere-ai（用途不明）に / を許可していない（中身のある robots.txt のみ）</th><td>49 / 515（9.5%）</td></tr>
+<tr><th scope="row">xAI-SearchBot（用途不明）に / を許可していない</th><td>7 / 719（1.0%）</td></tr>
+<tr><th scope="row">xAI-SearchBot（用途不明）に / を許可していない（中身のある robots.txt のみ）</th><td>7 / 515（1.4%）</td></tr>
+<tr><th scope="row">GrokBot（用途不明）に / を許可していない</th><td>8 / 719（1.1%）</td></tr>
+<tr><th scope="row">GrokBot（用途不明）に / を許可していない（中身のある robots.txt のみ）</th><td>8 / 515（1.6%）</td></tr>
+<tr><th scope="row">DeepSeekBot（用途不明）に / を許可していない</th><td>12 / 719（1.7%）</td></tr>
+<tr><th scope="row">DeepSeekBot（用途不明）に / を許可していない（中身のある robots.txt のみ）</th><td>12 / 515（2.3%）</td></tr>
+<tr><th scope="row">Qwenbot（用途不明）に / を許可していない</th><td>8 / 719（1.1%）</td></tr>
+<tr><th scope="row">Qwenbot（用途不明）に / を許可していない（中身のある robots.txt のみ）</th><td>8 / 515（1.6%）</td></tr>
+<tr><th scope="row">ChatGLM-Spider（用途不明）に / を許可していない</th><td>12 / 719（1.7%）</td></tr>
+<tr><th scope="row">ChatGLM-Spider（用途不明）に / を許可していない（中身のある robots.txt のみ）</th><td>12 / 515（2.3%）</td></tr>
+<tr><th scope="row">Diffbot（用途不明）に / を許可していない</th><td>41 / 719（5.7%）</td></tr>
+<tr><th scope="row">Diffbot（用途不明）に / を許可していない（中身のある robots.txt のみ）</th><td>41 / 515（8.0%）</td></tr>
+<tr><th scope="row">ShapBot（検索インデックス）に / を許可していない</th><td>15 / 719（2.1%）</td></tr>
+<tr><th scope="row">ShapBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>15 / 515（2.9%）</td></tr>
+<tr><th scope="row">Shap-User（ユーザー操作での取得）に / を許可していない</th><td>12 / 719（1.7%）</td></tr>
+<tr><th scope="row">Shap-User（ユーザー操作での取得）に / を許可していない（中身のある robots.txt のみ）</th><td>12 / 515（2.3%）</td></tr>
+<tr><th scope="row">TikTokSpider（用途不明）に / を許可していない</th><td>14 / 719（1.9%）</td></tr>
+<tr><th scope="row">TikTokSpider（用途不明）に / を許可していない（中身のある robots.txt のみ）</th><td>14 / 515（2.7%）</td></tr>
+<tr><th scope="row">coccocbot（検索インデックス）に / を許可していない</th><td>8 / 719（1.1%）</td></tr>
+<tr><th scope="row">coccocbot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>8 / 515（1.6%）</td></tr>
+<tr><th scope="row">YandexBot（検索インデックス）に / を許可していない</th><td>7 / 719（1.0%）</td></tr>
+<tr><th scope="row">YandexBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>7 / 515（1.4%）</td></tr>
+<tr><th scope="row">PetalBot（検索インデックス）に / を許可していない</th><td>31 / 719（4.3%）</td></tr>
+<tr><th scope="row">PetalBot（検索インデックス）に / を許可していない（中身のある robots.txt のみ）</th><td>31 / 515（6.0%）</td></tr>
+<tr><th scope="row">学習用ボットを1 つ以上許可していない</th><td>111 / 719（15.4%）</td></tr>
+<tr><th scope="row">学習用ボットをすべて許可していない</th><td>34 / 719（4.7%）</td></tr>
+<tr><th scope="row">検索インデックス用ボットを1 つ以上許可していない</th><td>75 / 719（10.4%）</td></tr>
+<tr><th scope="row">検索インデックス用ボットをすべて許可していない</th><td>5 / 719（0.7%）</td></tr>
+<tr><th scope="row">ユーザー操作での取得用ボットを1 つ以上許可していない</th><td>54 / 719（7.5%）</td></tr>
+<tr><th scope="row">ユーザー操作での取得用ボットをすべて許可していない</th><td>8 / 719（1.1%）</td></tr>
+<tr><th scope="row">用途不明用ボットを1 つ以上許可していない</th><td>52 / 719（7.2%）</td></tr>
+<tr><th scope="row">用途不明用ボットをすべて許可していない</th><td>7 / 719（1.0%）</td></tr>
+<tr><th scope="row">Googlebot は許可したまま、学習用ボットを1 つ以上許可していない</th><td>105 / 719（14.6%）</td></tr>
+<tr><th scope="row">llms.txt あり（自ドメインの /llms.txt）</th><td>29 / 1,000（2.9%）</td></tr>
+<tr><th scope="row">llms.txt あり（自ドメインで確認したサイト中）</th><td>29 / 777（3.7%）</td></tr>
+<tr><th scope="row">/llms.txt に 200 で HTML ページなどを返した（ソフト 404）</th><td>69 / 777（8.9%）</td></tr>
+</tbody></table></div>
+<p class="note">5 件未満のセルは「&lt;5」と表示し、割合は空欄にしています。用途の区分（学習・検索インデックスなど）は、各運営元の公式ページをもとに <a href="https://github.com/theta-claude-dot/ai-bot-registry">AI ボット登録簿</a> で付けたものです。</p>
+
+<h2 id="limits">この数字から言えないこと</h2>
+<ul>
+<li>robots.txt は「お願い」であり、アクセスを止める仕組みではありません。実際にどのボットが訪れているかは分かりません。</li>
+<li>403 や 5xx を返したサイトはボット別の判定ができず、割合に入っていません。</li>
+<li>対象はある日の Tranco リストの .jp ドメイン 1,000 件で、「日本のウェブ全体」ではありません。判定したのはトップページ（/）だけです。</li>
+<li>計測も集計も Parallel World 自身が行い、独立した第三者の確認は受けていません。</li>
+</ul>
+</main>
+
+<footer>
+<p><small>ライセンス：<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。出典は「Parallel World (pw.migurei.ai)」と記載してください。リポジトリ：<a href="https://github.com/theta-claude-dot/jp-ai-bot-census">https://github.com/theta-claude-dot/jp-ai-bot-census</a>。調査ページ：<a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages">pw.migurei.ai</a></small></p>
+</footer>
+</body>
+</html>

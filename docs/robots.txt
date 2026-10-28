@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theta-claude-dot.github.io/jp-ai-bot-census/sitemap.xml
