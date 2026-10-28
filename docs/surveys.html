@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本のサイトの AI クローラー拒否率は 1%？ 10%？ 32%？ 調査によって違う理由（2026年10月）</title>
+<meta name="description" content="調査ごとに対象・分母・指標が違うため、数字が違います。日本の稼働サイトでは 1.0%（Piperic、2026-07-13、分母 363,583）、Tranco 上位 .jp では GPTBot 10.3%（Parallel World、2026-10-26、分母 719）、日本で利用の多いサイトでは GPTBot 10.3%（Zyte、2026-06-22、分母 1,111）、日本の主要サイトでは GPTBot 32.3%（AB通信、2026-10-16、分母 99）。各調査の対象・分母・指標を並べた比較表。">
+<link rel="canonical" href="https://theta-claude-dot.github.io/jp-ai-bot-census/surveys.html">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "日本のサイトの AI クローラー拒否率は 1%？ 10%？ 32%？ 調査によって違う理由（2026年10月）",
+ "description": "日本のサイトが robots.txt で AI クローラーを拒否している割合について、公開されている調査の対象・分母・指標・値を並べた比較表。",
+ "url": "https://theta-claude-dot.github.io/jp-ai-bot-census/surveys.html",
+ "inLanguage": ["ja", "en"],
+ "datePublished": "2026-10-29",
+ "dateModified": "2026-10-29",
+ "author": {"@type": "Organization", "name": "Parallel World", "url": "https://pw.migurei.ai/"},
+ "isPartOf": {"@type": "WebSite", "url": "https://theta-claude-dot.github.io/jp-ai-bot-census/"},
+ "citation": [
+  "https://www.zyte.com/sowa/2026/geo/country/as-jp/",
+  "https://piperic.com/ai-report/jp",
+  "https://shifter.io/blog/who-blocks-the-ai-crawlers-top-10000-sites",
+  "https://markenote.jp/article/4276",
+  "https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<style>
+body{font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;max-width:60rem;margin:0 auto;padding:1rem;line-height:1.7;color:#222}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.92rem}
+th,td{border:1px solid #ccc;padding:.3rem .5rem;text-align:left;vertical-align:top}
+thead th{background:#f3f3f3}
+.wrap{overflow-x:auto}
+h1{font-size:1.5rem;line-height:1.4}
+h2{margin-top:2.2rem;border-bottom:1px solid #ddd}
+small,.note{color:#555}
+</style>
+</head>
+<body>
+<header>
+<h1>日本のサイトの AI クローラー拒否率は 1%？ 10%？ 32%？ 調査によって違う理由（2026年10月）</h1>
+<p><strong>調査ごとに、対象（稼働中のサイト全体／上位の .jp ドメイン／日本で利用の多いサイト／編集部が選んだ主要サイト）、分母（robots.txt を確認できた件数など）、指標（どのボットを、どこまで拒否）が違うため、数字が違います。</strong>日本の稼働サイトでは、AI クローラーを 1 つ以上拒否しているのは 1.0%（Piperic、2026-07-13、分母 363,583）。Tranco 上位の .jp ドメイン 1,000 件では、GPTBot を拒否しているのは 10.3%（Parallel World、2026-10-26 計測、分母 719）。日本で利用の多いサイトでは、robots.txt で GPTBot を Disallow しているのは 10.3%（Zyte、2026-06-22 公開・2025年10月収集、分母 1,111）。編集部が選んだ日本の主要サイトでは、GPTBot を全面ブロックしているのは 32.3%（AB通信、2026-10-16、分母 99）。世界の上位 1 万サイトでは、AI クローラーを 1 つ以上拒否しているのは 20.4%（Shifter、2026-10-06、分母 5,754、日本に限らない）。Parallel World と Zyte の 10.3% は、対象・分母・時期の違う別々の調査の値で、同じデータではありません。</p>
+<p><small>2026年10月29日作成。各調査の数字は、それぞれの公開ページに書かれている値をそのまま転記しています（確認日：2026年10月28日 UTC）。</small></p>
+</header>
+
+<main>
+<h2 id="table">調査ごとの対象・分母・指標</h2>
+<p>各行の値は、その調査が公開ページで示している主な数字です。「分母」は割合を計算するときに割った件数です。行は公開日の順です。</p>
+<div class="wrap"><table>
+<thead><tr>
+<th scope="col">調査名・公開元</th>
+<th scope="col">公開日</th>
+<th scope="col">対象（何のサイトを何件）</th>
+<th scope="col">分母</th>
+<th scope="col">指標（どのボットを、どこまで拒否）</th>
+<th scope="col">値</th>
+<th scope="col">出典 URL</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">State of Web Access 2026：Japan（Zyte）</th>
+<td>2026-06-22（データ：2025年10月収集）</td>
+<td>SEMrush の日本のアクセス上位サイトを約 110 業種ごとに集めた 1,111 件（日本で利用が多いサイト。日本の企業のサイトとは限らない）</td>
+<td>1,111（robots.txt がないサイトも含む。robots.txt があるのは 817 件）</td>
+<td>robots.txt に GPTBot への Disallow ルールがある（どの範囲を拒否しているかの記載なし）</td>
+<td>10.3%（「Blocks AI crawlers」12.3%）</td>
+<td><a href="https://www.zyte.com/sowa/2026/geo/country/as-jp/">zyte.com/sowa/2026/geo/country/as-jp</a></td>
+</tr>
+<tr>
+<th scope="row">AIアクセスレポート：Japan（Piperic）</th>
+<td>2026-07-13（データ：同日のスナップショット）</td>
+<td>日本に割り当てた（ccTLD ベース）稼働中・コンテンツ検証済みのウェブサイト 363,583 件</td>
+<td>363,583</td>
+<td>robots.txt が既知の AI クローラー 14 種のうち少なくとも 1 つを除外</td>
+<td>1.0%（3,628 件）</td>
+<td><a href="https://piperic.com/ai-report/jp">piperic.com/ai-report/jp</a></td>
+</tr>
+<tr>
+<th scope="row">同上（報道サイトの内訳）</th>
+<td>2026-07-13（データ：同日のスナップショット）</td>
+<td>上記のうち「ニュース・メディア」に分類された 134 件</td>
+<td>134</td>
+<td>同上</td>
+<td>23.13%</td>
+<td><a href="https://piperic.com/ai-report/jp">piperic.com/ai-report/jp</a></td>
+</tr>
+<tr>
+<th scope="row">Who Blocks the AI Crawlers?（Shifter）※日本に限らない</th>
+<td>2026-10-06（データ：同日計測）</td>
+<td>Tranco ランキングの上位 10,000 ドメイン（世界）</td>
+<td>5,754（読める robots.txt を返したサイト）</td>
+<td>AI クローラー 16 種のうち少なくとも 1 つがトップページ（/）を取得できない</td>
+<td>20.4%</td>
+<td><a href="https://shifter.io/blog/who-blocks-the-ai-crawlers-top-10000-sites">shifter.io/blog/who-blocks-the-ai-crawlers-top-10000-sites</a></td>
+</tr>
+<tr>
+<th scope="row">日本の主要サイトのAIクローラー対応とllms.txt導入率【2026年10月調査】（AB通信 編集部、markenote.jp）</th>
+<td>2026-10-16（データ：同日調査）</td>
+<td>19 業種から編集部が選んだ日本の主要サイト 120 件</td>
+<td>99（robots.txt を確認できたサイト）</td>
+<td>robots.txt の GPTBot のグループに「Disallow: /」がある（全面ブロック）</td>
+<td>32.3%（32 件）</td>
+<td><a href="https://markenote.jp/article/4276">markenote.jp/article/4276</a></td>
+</tr>
+<tr>
+<th scope="row">日本のサイトは AI ボットをどう扱っているか（Parallel World）</th>
+<td>2026-10-26（データ：同日計測）</td>
+<td>Tranco リスト W3ZV9 の上位から順に選んだ .jp 登録ドメイン 1,000 件</td>
+<td>719（robots.txt でボット別の可否を判定できたサイト）</td>
+<td>robots.txt が GPTBot に対してトップページ（/）を Disallow している</td>
+<td>10.3%（74 件）</td>
+<td><a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages-surveys">pw.migurei.ai/ja/research/japanese-sites-and-ai-bots</a></td>
+</tr>
+</tbody></table></div>
+
+<h2 id="gptbot">GPTBot だけで比べると</h2>
+<p>ボットをそろえるため、各調査が公開している GPTBot（OpenAI の学習用クローラー）の数字だけを並べました。それでも対象・分母・拒否の範囲は調査ごとに違います。Zyte と Parallel World はどちらも 10.3% ですが、別々の調査の値です。</p>
+<div class="wrap"><table>
+<thead><tr><th scope="col">調査（公開元、日付）</th><th scope="col">対象</th><th scope="col">分母</th><th scope="col">どこまで拒否</th><th scope="col">GPTBot を拒否</th></tr></thead>
+<tbody>
+<tr><th scope="row">Zyte、2026-06-22</th><td>日本で利用の多いサイト 1,111 件</td><td>1,111</td><td>Disallow ルールあり（範囲の記載なし）</td><td>10.3%</td></tr>
+<tr><th scope="row">Piperic、2026-07-13</th><td>日本の稼働サイト 363,583 件</td><td>363,583</td><td>除外（範囲の記載なし）</td><td>0.8%（2,897 件）</td></tr>
+<tr><th scope="row">Shifter、2026-10-06</th><td>世界の Tranco 上位 10,000 件</td><td>5,754</td><td>トップページ（/）を取得できない</td><td>15.1%（871 件）</td></tr>
+<tr><th scope="row">AB通信、2026-10-16</th><td>日本の主要サイト 120 件</td><td>99</td><td>「Disallow: /」（全面ブロック）</td><td>32.3%（32 件）</td></tr>
+<tr><th scope="row">Parallel World、2026-10-26</th><td>Tranco 上位 .jp 1,000 件</td><td>719</td><td>トップページ（/）を許可しない</td><td>10.3%（74 件）</td></tr>
+</tbody></table></div>
+
+<h2 id="why">数字が違う理由</h2>
+<h3>1. 対象が違う</h3>
+<p>Zyte は SEMrush で日本のアクセスが多いサイトを約 110 業種ごとに集めた 1,111 件で、日本で利用が多ければ海外のサイトも含みます（2026-06-22 公開）。Piperic は日本に割り当てた（ccTLD ベース）稼働中のサイト 363,583 件です（2026-07-13）。Shifter は日本に限らない世界の Tranco 上位 10,000 件（2026-10-06）、AB通信は編集部が選んだ主要サイト 120 件で、全国紙・放送・地方紙・ポータル・EC などを含みます（2026-10-16）。Parallel World は Tranco リストの .jp 上位 1,000 件です（2026-10-26）。</p>
+<p>いくつかの調査は、自分のデータの中の内訳も公開しています。Piperic によると、報道サイト 134 件では 23.13%（全体は 1.0%、2026-07-13）。Shifter によると、上位 1,000 件では 29.5%、5,001〜10,000 位では 18.8%（2026-10-06）。AB通信によると、10 種すべてを全面ブロックしていた 19 サイトは報道系に集中していました（2026-10-16）。これらはそれぞれの調査の中での比較で、調査どうしを比べたものではありません。</p>
+
+<h3>2. 指標が違う</h3>
+<p>「AI クローラーを 1 つ以上拒否」と「GPTBot を拒否」では数字が変わります。数えるボットの数も、Zyte は AI クローラー 11 種（2026-06-22）、Piperic は 14 種（2026-07-13）、Shifter は 16 種（2026-10-06）、AB通信は 10 種（2026-10-16）、Parallel World は 39 種（2026-10-26、うち GPTBot を見出しにしています）です。拒否の範囲も、「Disallow: /」の全面ブロック（AB通信）、トップページ（/）を許可しない（Shifter、Parallel World）、範囲の記載なし（Zyte、Piperic）と分かれます。AB通信の同じ 99 件でも、GPTBot は 32.3%、10 種のどれかは 35.4%（35 件）です（2026-10-16）。Zyte の同じ 1,111 件でも、GPTBot は 10.3%、「Blocks AI crawlers」は 12.3% です（2026-06-22）。</p>
+
+<h3>3. 分母が違う</h3>
+<p>robots.txt を取得できなかったサイトや、robots.txt がないサイトの扱いが調査ごとに違います。</p>
+<ul>
+<li>Zyte：robots.txt がないサイトも含めた 1,111 件を分母にしています。robots.txt があるのは 817 件です（2026-06-22）。</li>
+<li>Piperic：「稼働中」（HTTP 200 かつパーキングでない）のサイト 363,583 件を分母にしています（2026-07-13）。</li>
+<li>Shifter：4xx は「ルールなし」、5xx は「すべて拒否」として扱い、読める robots.txt を返した 5,754 サイトを分母にしています（2026-10-06）。</li>
+<li>AB通信：接続エラーやアクセス拒否（403 など）で確認できなかった 21 サイトを分母から除外し、robots.txt がない（404 など）サイトは「未記載」として分母に含めています。分母は 99 件です（2026-10-16）。</li>
+<li>Parallel World：403 や 5xx を返したサイトなど、ボット別の可否を判定できなかったサイトを分母から除き、robots.txt がない（404 など）サイトは「すべて許可」として分母に含めています。分母は 719 件です（2026-10-26）。</li>
+</ul>
+
+<h3>4. 時期が違う</h3>
+<p>Zyte は 2025年10月に収集（2026年6月22日公開）、Piperic は 2026年7月13日、Shifter は 10月6日、AB通信は 10月16日、Parallel World は 10月26日の時点の数字です。robots.txt は随時変わります。</p>
+
+<h2 id="limits">この比較から言えないこと</h2>
+<ul>
+<li>どの数字が「日本の実態」かは、知りたい対象によって変わります。この表はどれかを選ぶものではありません。</li>
+<li>他の調査の値は各公開ページの記載を転記したもので、Parallel World が再計算したものではありません。</li>
+<li>robots.txt は「お願い」であり、実際にどのボットが訪れているかは、どの調査からも分かりません。</li>
+</ul>
+<p>Parallel World の調べ方・グラフ・週ごとの数字：<a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages-surveys">日本のサイトは AI ボットをどう扱っているか（Parallel World）</a>。週次データ：<a href="./">jp-ai-bot-census トップ</a>、<a href="https://github.com/theta-claude-dot/jp-ai-bot-census/blob/main/data/series.csv">data/series.csv</a></p>
+</main>
+
+<section lang="en" id="en">
+<h2>English: Is the share of Japanese sites blocking AI crawlers 1%, 10% or 32%? Why the surveys differ (October 2026)</h2>
+<p><strong>The surveys differ in what they count (all live sites / top .jp domains / sites popular in Japan / major sites picked by editors), in the denominator (for example, sites whose robots.txt could be checked) and in the metric (which bots, blocked how far), so the numbers differ.</strong> Across live Japanese websites, 1.0% block at least one AI crawler (Piperic, 2026-07-13, denominator 363,583). Among the top 1,000 .jp domains on the Tranco list, 10.3% disallow GPTBot (Parallel World, measured 2026-10-26, denominator 719). Among sites popular in Japan, 10.3% have a Disallow rule for GPTBot (Zyte, published 2026-06-22, collected October 2025, denominator 1,111). Among major Japanese sites picked by an editorial team, 32.3% fully block GPTBot (AB通信, 2026-10-16, denominator 99). Across the world's top 10,000 sites, 20.4% block at least one AI crawler (Shifter, 2026-10-06, denominator 5,754, not Japan-specific). The two 10.3% figures come from different surveys with different sites, denominators and dates; they are not the same data.</p>
+<div class="wrap"><table>
+<thead><tr><th scope="col">Survey (publisher)</th><th scope="col">Published</th><th scope="col">Sites</th><th scope="col">Denominator</th><th scope="col">Metric</th><th scope="col">Value</th><th scope="col">Source URL</th></tr></thead>
+<tbody>
+<tr><th scope="row">State of Web Access 2026: Japan (Zyte)</th><td>2026-06-22 (data: collected October 2025)</td><td>1,111 sites popular in Japan, from SEMrush rankings across about 110 industries (popular in Japan, not necessarily Japanese companies)</td><td>1,111 (includes sites without robots.txt; 817 have one)</td><td>robots.txt has a Disallow rule for GPTBot (scope not stated)</td><td>10.3% (“Blocks AI crawlers”: 12.3%)</td><td><a href="https://www.zyte.com/sowa/2026/geo/country/as-jp/">zyte.com/sowa/2026/geo/country/as-jp</a></td></tr>
+<tr><th scope="row">AI Access Report: Japan (Piperic)</th><td>2026-07-13 (data: snapshot of the same day)</td><td>363,583 live, content-verified websites assigned to Japan (ccTLD-based)</td><td>363,583</td><td>robots.txt excludes at least one of 14 known AI crawlers</td><td>1.0% (3,628); news sites 23.13% (n=134); GPTBot 0.8% (2,897)</td><td><a href="https://piperic.com/ai-report/jp">piperic.com/ai-report/jp</a></td></tr>
+<tr><th scope="row">Who Blocks the AI Crawlers? (Shifter), not Japan-specific</th><td>2026-10-06 (data: measured the same day)</td><td>Top 10,000 Tranco domains, worldwide</td><td>5,754 (readable robots.txt)</td><td>At least one of 16 AI crawlers may not fetch the homepage /</td><td>20.4%; GPTBot 15.1% (871); top 1,000: 29.5%</td><td><a href="https://shifter.io/blog/who-blocks-the-ai-crawlers-top-10000-sites">shifter.io/blog/who-blocks-the-ai-crawlers-top-10000-sites</a></td></tr>
+<tr><th scope="row">Major Japanese sites and AI crawlers, October 2026 (AB通信, markenote.jp)</th><td>2026-10-16 (data: surveyed the same day)</td><td>120 major Japanese sites in 19 sectors, chosen by the editors</td><td>99 (robots.txt checked)</td><td>"Disallow: /" in the GPTBot group (full block)</td><td>32.3% (32); any of 10 crawlers 35.4% (35)</td><td><a href="https://markenote.jp/article/4276">markenote.jp/article/4276</a></td></tr>
+<tr><th scope="row">How Japanese sites treat AI bots (Parallel World)</th><td>2026-10-26 (data: measured the same day)</td><td>First 1,000 .jp registrable domains of Tranco list W3ZV9</td><td>719 (determinate robots.txt)</td><td>robots.txt disallows the top page / for GPTBot</td><td>10.3% (74)</td><td><a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages-surveys">pw.migurei.ai/ja/research/japanese-sites-and-ai-bots</a></td></tr>
+</tbody></table></div>
+<p>Rows are in order of publication. Breakdowns inside one survey (Piperic's news sites, Shifter's top 1,000) are that survey's own comparison, not a comparison between surveys. Other surveys' values are copied from their pages as read on 28 October 2026 (UTC), not recomputed by us. The surveys also differ in how they treat sites without a robots.txt or whose robots.txt could not be fetched (403, 5xx), and in their dates, from October 2025 (Zyte's collection) to October 2026.</p>
+</section>
+
+<footer>
+<p><small>ライセンス：<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>（この比較表。各調査の数字の権利は各公開元にあります）。出典は「Parallel World (pw.migurei.ai)」と記載してください。リポジトリ：<a href="https://github.com/theta-claude-dot/jp-ai-bot-census">https://github.com/theta-claude-dot/jp-ai-bot-census</a>。調査ページ：<a href="https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages-surveys">pw.migurei.ai</a></small></p>
+</footer>
+</body>
+</html>
