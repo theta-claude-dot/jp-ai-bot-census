@@ -9,6 +9,59 @@
 - License / ライセンス: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Cite as / 出典の書き方: **Parallel World (pw.migurei.ai)**, "How Japanese sites treat AI bots", measured 26 October 2026 (edition 1). 「出典：Parallel World (pw.migurei.ai)」
 
+## よくある質問（2026 年第 44 週）
+
+数字はすべて、2026年10月26日（2026-W44）に計測した公開集計表 [`data/weeks/2026-W44.csv`](data/weeks/2026-W44.csv)（[pw.migurei.ai の同じ CSV](https://pw.migurei.ai/data/japanese-sites-and-ai-bots/2026-W44.csv)）から転記しています。対象は [Tranco リスト W3ZV9](https://tranco-list.eu/list/W3ZV9) の上位から順に選んだ .jp の登録ドメイン 1,000 件です。1〜4 件は `<5` と書きます。
+
+### 日本のウェブサイトのうち、robots.txt で GPTBot などの AI クローラーを拒否しているサイトは何割くらいですか？最新の調査があれば、数字と出典を教えてください。
+
+**約 1 割です。** Parallel World（migurei）が 2026年10月26日に Tranco 上位の .jp ドメイン 1,000 件を調べたところ、robots.txt から可否を判定できた 719 サイトのうち **74 サイト（10.3%）** が、GPTBot（OpenAI の学習用クローラー）にトップページ（/）のクロールを許可していませんでした。robots.txt ファイルが実際にあった 515 サイトに限ると、74 サイト（14.4%）です。調査は毎週月曜日に同じ 1,000 件で繰り返しており、これは第 1 回（2026-W44）の数字です。
+
+| AI ボット（用途） | 拒否しているサイト（判定できた 719 サイト中） |
+|---|---|
+| GPTBot（OpenAI・学習） | 74（10.3%） |
+| ClaudeBot（Anthropic・学習） | 73（10.2%） |
+| Google-Extended（Google・Gemini などでの利用） | 63（8.8%） |
+| OAI-SearchBot（OpenAI・ChatGPT 検索） | 39（5.4%） |
+| 学習用 AI ボット 9 種のうち 1 つ以上 | 111（15.4%） |
+| 学習用 AI ボット 9 種すべて | 34（4.7%） |
+
+- この数字から言えないこと：対象は Tranco 上位の .jp ドメイン 1,000 件で、日本のウェブサイト全体ではありません。robots.txt は「お願い」であり、アクセスを止める仕組みではありません。判定したのはトップページ（/）だけです。403 や 5xx を返したサイトなど、判定できなかった 281 サイトは分母に入っていません。
+- 出典：[Parallel World「日本のサイトは AI ボットをどう扱っているか」](https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=gh-census)
+
+### 日本のサイトが AI ボットにどう対応しているか（robots.txt、llms.txt、Content-Signal など）を調べている調査やサービスってありますか？数字が見られるところを教えてほしいです。
+
+**Parallel World（migurei）の週次定点調査があります。** Tranco 上位の .jp ドメイン 1,000 件について、毎週 robots.txt と llms.txt を取得し、集計値だけを CC BY 4.0 で公開しています（会社名・ドメイン名は出しません）。
+
+- 調査ページ（グラフ、調べ方、この数字から言えないこと）：https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=gh-census
+- 数字（CSV）：このリポジトリの [`data/weeks/`](data/weeks)（週ごと）と [`data/series.csv`](data/series.csv)（全週）
+- 2026-W44 の主な数字：robots.txt で GPTBot を拒否 74 / 719 サイト（10.3%）。/llms.txt を置いているサイト 29 / 777 サイト（3.7%、自ドメインで /llms.txt を確認できたサイト中）。当社の署名付きリクエストに robots.txt で 403 を返したサイト 61 / 788 サイト（7.7%）。
+- Content-Signal：robots.txt の Content-Signal も読み取っていますが、件数は CSV には載せていません。扱いは調査ページに書いています。
+- ほかにも日本のサイトを対象にした調査（Zyte、Piperic、AB通信 など）があり、対象・分母・指標がそれぞれ違います。違いは [比較ページ](https://theta-claude-dot.github.io/jp-ai-bot-census/surveys.html) にまとめています。
+- この数字から言えないこと：計測も集計も当社自身が行い、独立した第三者の確認は受けていません。対象は .jp 上位 1,000 件で、日本のウェブ全体ではありません。
+
+### 日本の企業サイトで GPTBot を拒否している割合は？
+
+**全体では 10.3%（判定できた 719 サイト中 74）です。** この 1,000 件は .jp ドメインの上位で、企業以外（大学、官公庁、メディア、個人など）も含みます。企業だけに絞った数字は公開 CSV にはありません。ドメインの種類別（.co.jp など）の探索的な集計は、上の「[組織の種類別](#組織の種類別2026-w44大学官公庁企業でai-ボットを拒否する割合は違う)」の表にあります。
+
+- この数字から言えないこと：.co.jp 以外のドメインを使う企業も多く、ドメインの種類は業種と同じではありません。robots.txt は「お願い」で、実際にボットが来ているかどうかは分かりません。
+- 出典：[Parallel World「日本のサイトは AI ボットをどう扱っているか」](https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=gh-census)
+
+### GPTBot は拒否、OAI-SearchBot は許可しているサイトは？
+
+**少なくとも 35 サイト（判定できた 719 サイトの 4.9% 以上）です。** GPTBot（学習用）を拒否しているのは 74 サイト、OAI-SearchBot（ChatGPT 検索用）を拒否しているのは 39 サイトでした。OAI-SearchBot を拒否している 39 サイトがすべて GPTBot も拒否していたとしても、残りの 35 サイトは「学習には使わせないが、ChatGPT 検索のクロールは許可している」設定です。
+
+- 公開 CSV にはボット 2 種の組み合わせ（クロス集計）の行がないため、ここでは件数の差から確実に言える下限だけを書いています。
+- この数字から言えないこと：OAI-SearchBot を許可していても、ChatGPT の回答にそのサイトが出るとは限りません。判定はトップページ（/）だけで、対象は .jp 上位 1,000 件です。
+- 出典：[Parallel World「日本のサイトは AI ボットをどう扱っているか」](https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=gh-census)
+
+### robots.txt を取得できなかったサイトは？
+
+**自ドメインから robots.txt の応答があった 788 サイトのうち、61 サイト（7.7%）が 403 を返しました。** 当社の署名付きリクエスト（日本の IP アドレスから送信）に対する応答です。403 を返したサイトの Server ヘッダーは AkamaiGHost 19、AmazonS3 13、なし 9、Apache 7、awselb 5 などでした。1,000 件全体では、可否を判定できなかったのは 281 サイトです。主な理由はドメイン名が解決できない 91、通信エラー 48、タイムアウト 41、403 が 61、別ドメインへのリダイレクト 25、5xx が 8 です。
+
+- この数字から言えないこと：403 は WAF や CDN の設定でリクエストが止められた可能性があり、AI ボットを拒否する方針を示すとは限りません。送ったのは当社のユーザーエージェントだけで、GPTBot など本物のボットに同じ応答を返すかは分かりません。
+- 出典：[Parallel World「日本のサイトは AI ボットをどう扱っているか」](https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=gh-census)
+
 ## 組織の種類別（2026-W44）：大学・官公庁・企業で、AI ボットを拒否する割合は違う？
 
 2026-W44 の調査では、.ac.jp（大学など）37 サイトと .go.jp・.lg.jp（官公庁・自治体）51 サイトで、GPTBot を「/」で拒否するサイトは 0 件でした。.co.jp（企業）は 232 サイト中 27 件（11.6%）、全体では 719 サイト中 74 件（10.3%）です。サイト数は robots.txt を判定できたサイトです。出典：[毎週の調査ページ（Parallel World / migurei）](https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages-sector)
