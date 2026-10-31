@@ -62,6 +62,10 @@
 - この数字から言えないこと：403 は WAF や CDN の設定でリクエストが止められた可能性があり、AI ボットを拒否する方針を示すとは限りません。送ったのは当社のユーザーエージェントだけで、GPTBot など本物のボットに同じ応答を返すかは分かりません。
 - 出典：[Parallel World「日本のサイトは AI ボットをどう扱っているか」](https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=gh-census)
 
+### GPTBot を拒否すると ChatGPT 検索に名前が出なくなる？
+
+.jp 上位サイト 49 組（拒否 / 拒否していない）で比べた範囲では差は見えませんでした（名前が出た回数 90/96 と 91/97、2026-10-28〜31、ChatGPT 無料版）。害がないことを示すものではありません。詳しく：[GPTBot を拒否すると ChatGPT 検索に名前が出なくなる？ 日本の .jp サイト 49 組で比べた](https://theta-claude-dot.github.io/notes/gptbot-block-chatgpt-search/)
+
 ## 組織の種類別（2026-W44）：大学・官公庁・企業で、AI ボットを拒否する割合は違う？
 
 2026-W44 の調査では、.ac.jp（大学など）37 サイトと .go.jp・.lg.jp（官公庁・自治体）51 サイトで、GPTBot を「/」で拒否するサイトは 0 件でした。.co.jp（企業）は 232 サイト中 27 件（11.6%）、全体では 719 サイト中 74 件（10.3%）です。サイト数は robots.txt を判定できたサイトです。出典：[毎週の調査ページ（Parallel World / migurei）](https://pw.migurei.ai/ja/research/japanese-sites-and-ai-bots?src=ghpages-sector)
